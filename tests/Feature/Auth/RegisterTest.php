@@ -27,7 +27,7 @@ class RegisterTest extends TestCase
 
     protected function guestMiddlewareRoute()
     {
-        return route('home');
+        return route('urlhome');
     }
 
     /**

@@ -4,11 +4,13 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::view('/', 'frontend.welcome')->name('home');
+Route::view('/', 'frontend.home')->name('home');
+Route::view('/urlhome', 'frontend.welcome')->name('urlhome');
 Route::post('/create', 'UrlController@create')->name('createshortlink');
 Route::post('/validate-custom-key', 'UrlController@customKeyValidation');
 Route::get('/+{keyword}', 'UrlController@showShortenedUrlDetails')->name('short_url.stats');
 Route::get('/duplicate/{keyword}', 'UrlController@duplicate')->middleware('auth')->name('duplicate');
+Route::resource('wagroups','WagroupController');
 
 Route::namespace('Dashboard')->prefix('admin')->group(function () {
     Route::middleware('auth')->group(function () {

@@ -209,7 +209,7 @@ class UrlFeTest extends TestCase
         ]);
 
         $response
-            ->assertRedirect(route('home'))
+            ->assertRedirect(route('urlhome'))
             ->assertSessionHasErrors('long_url');
     }
 
@@ -236,7 +236,7 @@ class UrlFeTest extends TestCase
             route('short_url.stats', $url->keyword)
         );
 
-        $response2 = $this->get(route('home').'/'.$customKey);
+        $response2 = $this->get(route('urlhome').'/'.$customKey);
         $response2->assertNotFound();
     }
 
@@ -260,7 +260,7 @@ class UrlFeTest extends TestCase
             route('short_url.stats', $customKey)
         );
 
-        $response2 = $this->get(route('home').'/'.$customKey);
+        $response2 = $this->get(route('urlhome').'/'.$customKey);
         $response2->assertRedirect($url->long_url);
 
         $this->assertCount(2, Url::all());
@@ -277,7 +277,7 @@ class UrlFeTest extends TestCase
         ]);
 
         $response
-            ->assertRedirect(route('home'))
+            ->assertRedirect(route('urlhome'))
             ->assertSessionHasErrors('custom_key');
 
         $this->assertCount(1, Url::all());
@@ -300,7 +300,7 @@ class UrlFeTest extends TestCase
         ]);
 
         $response
-            ->assertRedirect(route('home'))
+            ->assertRedirect(route('urlhome'))
             ->assertSessionHasErrors('custom_key');
 
         $this->assertCount(1, Url::all());

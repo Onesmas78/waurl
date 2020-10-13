@@ -38,7 +38,10 @@
             <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-lock"></i></span></div>
             <input class="form-control" type="password" placeholder="@lang('Password')" name="password"/></div>
           <div class="row">
-            <div class="col-6"><a href="{{ route('password.request') }}" class="px-0">@lang('Forgot password?')</a></div>
+            <div class="col-6 pb-4"><a href="{{ route('password.request') }}" class="px-0">@lang('Forgot password?')</a></div>
+          </div>
+          <div class="row">
+            <div class="col-6 text-left"><a href="{{ url()->previous() }}" class="btn btn-success px-4">@lang('Back')</a></div>
             <div class="col-6 text-right"><button class="btn btn-success px-4" type="submit">@lang('Login')</button></div>
           </div>
         </form>

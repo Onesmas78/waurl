@@ -21,7 +21,7 @@ class UrlHubLinkCheckerTest extends TestCase
         ]);
 
         $response
-            ->assertRedirect(route('home'))
+            ->assertRedirect(route('urlhome'))
             ->assertSessionHas('flash_error');
     }
 }

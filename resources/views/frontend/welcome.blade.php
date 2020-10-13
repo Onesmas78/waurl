@@ -6,7 +6,7 @@
 <div class="container home pt-5">
   @if (! Auth::check() and ! Config::get('urlhub.public_site'))
    <div class="row justify-content-md-center">
-    <div class="col-lg-8 text-center welcome-msg">@lang('Please login to shorten URLs')</div>
+    <div class="col-lg-8 text-center welcome-msg">@lang('Please login Or Register to shorten URLs')</div>
   </div>
   <div class="row mt-5 justify-content-md-center">
     <div class="col-lg-7">

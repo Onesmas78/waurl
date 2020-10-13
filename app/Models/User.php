@@ -58,6 +58,11 @@ class User extends Authenticatable
         return $this->hasMany('App\Models\Url');
     }
 
+    public function wagroups()
+    {
+        return $this->hasMany('App\Models\wagroups');
+    }
+
     /*
     |--------------------------------------------------------------------------
     | Eloquent: Mutators
